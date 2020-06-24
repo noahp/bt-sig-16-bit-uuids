@@ -33,7 +33,7 @@ def parse_html(htmlfile):
         tds = row.find_all("td")
         if len(tds) == 4:
 
-            tds = list(map(lambda x: x.text, tds))
+            tds = list(map(lambda x: x.text.strip(), tds))
             uuids.append(
                 UuidEntry(
                     UUID=int(tds[0]),
